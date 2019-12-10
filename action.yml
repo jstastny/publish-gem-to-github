@@ -1,0 +1,16 @@
+name: 'Release Gem to GitHub Packages'
+description: 'Builds and publishes Ruby gems to GitHub Packages'
+author: 'Jan Stastny'
+inputs:
+  token:
+    description: 'GitHub token that has access to write to GitHub package registry. You can use GITHUB_TOKEN for this.'
+    required: true
+  owner:
+    description: 'Name of the user or organization account that owns the repository containing your project.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.owner }}
