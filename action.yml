@@ -1,6 +1,9 @@
 name: 'Release Gem to GitHub Packages'
 description: 'Builds and publishes Ruby gems to GitHub Packages'
 author: 'Jan Stastny'
+branding:
+  color: green
+  icon: cloud
 inputs:
   token:
     description: 'GitHub token that has access to write to GitHub package registry. You can use GITHUB_TOKEN for this.'
