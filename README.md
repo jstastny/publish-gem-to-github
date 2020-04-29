@@ -35,3 +35,9 @@ See example project using this action at [https://github.com/jstastny/testgem](h
 
 This action currently does not bump the gem's version when building it. It is up to you to do it (either manually or in a previous workflow step).
 If you try to release gem in the same version that already exists, the step will fail.
+
+In case you want to ignore these types of failures, you can add:
+```
+continue-on-error: true
+```
+to the build step configuration.
