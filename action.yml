@@ -11,9 +11,13 @@ inputs:
   owner:
     description: 'Name of the user or organization account that owns the repository containing your project.'
     required: true
+  working-directory:
+    description: 'An optional path to switch to before building the Gem.'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.token }}
     - ${{ inputs.owner }}
+    - ${{ inputs.working-directory }}
