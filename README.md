@@ -1,5 +1,5 @@
 # Release Ruby Gem to GitHub Packages
-This action builds the gems for all `.gemspec` files in the projects root and uploads them to [GitHub Packages](https://github.com/features/packages).
+This action builds the gems for all `.gemspec` files in the projects root and uploads them to [GitHub Packages](https://github.com/features/packages) (or optionally specify a subdirectory to build from).
 
 ## Usage
 Example minimal workflow using this action:
@@ -26,10 +26,11 @@ See example project using this action at [https://github.com/jstastny/testgem](h
 
 ## Inputs
 
-| Name | Description |
-| -----| ------------|
-| `token` | GitHub token that has write access to Packages. You can use `secrets.GITHUB_TOKEN` |
-| `owner` | Name of the user or organization account that owns the repository containing your project |
+| Name                | Description                                                                                     |
+| ------------------- | ----------------------------------------------------------------------------------------------- |
+| `token`             | GitHub token that has write access to Packages. You can use `secrets.GITHUB_TOKEN`              |
+| `owner`             | Name of the user or organization account that owns the repository containing your project       |
+| `working-directory` | Optional parameter of the directory where you wish to build your gemspecs in (defaults to root) |
 
 ## Versioning your gem
 
