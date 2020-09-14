@@ -13,7 +13,9 @@ touch ~/.gem/credentials
 chmod 600 ~/.gem/credentials
 echo ":github: Bearer ${GITHUB_TOKEN}" >> ~/.gem/credentials
 
+cd "${WORKING_DIRECTORY:-.}"
+
 echo "Building the gem"
-gem build ${WORKING_DIRECTORY:-.}/*.gemspec
+gem build *.gemspec
 echo "Pushing the built gem to GitHub Package Registry"
 gem push --key github --host "https://rubygems.pkg.github.com/${OWNER}" ./*.gem
