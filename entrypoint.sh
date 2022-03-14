@@ -16,6 +16,6 @@ echo ":github: Bearer ${GITHUB_TOKEN}" >> ~/.gem/credentials
 cd "${WORKING_DIRECTORY:-.}"
 
 echo "Building the gem"
-find . -name '*.gemspec' -exec gem build {} \;
+find . -name '*.gemspec' -maxdepth 1 -exec gem build {} \;
 echo "Pushing the built gem to GitHub Package Registry"
-find . -name '*.gem' -exec gem push --key github --host "https://rubygems.pkg.github.com/${OWNER}" {} \;
+find . -name '*.gem' -maxdepth 1 -exec gem push --key github --host "https://rubygems.pkg.github.com/${OWNER}" {} \;
