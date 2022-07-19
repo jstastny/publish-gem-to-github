@@ -22,4 +22,4 @@ cd "${WORKING_DIRECTORY:-.}"
 echo "Building the gem"
 find . -name '*.gemspec' -maxdepth 1 -exec gem build {} \;
 echo "Pushing the built gem to GitHub Package Registry"
-find . -name '*.gem' -maxdepth 1 -exec gem push --key github --host "https://rubygems.pkg.github.com/${OWNER}" {} \;
+find . -name '*.gem' -maxdepth 1 -print0 | xargs -0L1 gem push --key github --host "https://rubygems.pkg.github.com/${OWNER}"
