@@ -12,6 +12,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
 
     steps:
     - uses: actions/checkout@v2
@@ -31,6 +34,7 @@ See example project using this action at [https://github.com/jstastny/testgem](h
 | `token`             | GitHub token that has write access to Packages. You can use `secrets.GITHUB_TOKEN`              |
 | `owner`             | Name of the user or organization account that owns the repository containing your project       |
 | `working-directory` | Optional parameter of the directory where you wish to build your gemspecs in (defaults to root) |
+| `permissions`       | Default value for packages in permissions is read only, You need to set it to write             |
 
 ## Versioning your gem
 
